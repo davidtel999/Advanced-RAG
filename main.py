@@ -1,10 +1,12 @@
 from src.memory import ShortTermMemory, LongTermMemoryManager
 from src.retrieval import hybrid_retriever
 from langchain_openai import ChatOpenAI
+import os
+os.environ.setdefault("ANONYMIZED_TELEMETRY", "False")  # Silence ChromaDB's telemetry: it fails with a posthog version mismatch and
+# prints harmless errors on every run. Must run before chromadb is imported.
 
 # Shared LLM instance
 llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)
-
 BASE_INSTRUCTION = (
     "You are a conversational RAG assistant specialized in fraud analysis.\n\n"
     "How to handle data and rankings:\n"
