@@ -2,7 +2,7 @@
 
 ## 1. Domain & Dataset
 
-For this assignment we chose _"Financial and Commercial Fraud Research and Cases"_ as our knowledge domain.
+For this task we chose _"Financial and Commercial Fraud Research and Cases"_ as our knowledge domain.
 
 The choice was primarily due to the vast diversity and volume of available data, alongside the sheer interest of the field. Our datasets were acquired from a range of sources (e.g., Statista, ResearchGate, Kaggle), and are expressed through many different file types, each serving a different purpose. Here is a table with a summary of the contribution of each file:
 
@@ -129,7 +129,7 @@ The mean LLM-as-a-Judge score was 77.2%, which was a positive outcome. The reaso
 
     Despite the seemingly correct answer, this question was deliberately written with a factual error: the actual reported share was 56%, not 55%. The system fell into the trap because it located a real textual fragment saying "...more than 55 percent of respondents indicating they had been victims of credit card fraud...", so the model just treated the wrong premise in the question as confirmed by the context.
 
-## Bonus A - Streamlit Chat Interface
+## Streamlit Chat Interface
 
 This addition introduces a refined **Streamlit** frontend (`app.py`), wrapping the exact retrieval, short-term memory, and long-term memory backend pipelines used by the Command-Line Interface into an interactive web UI.
 
@@ -145,9 +145,8 @@ This addition introduces a refined **Streamlit** frontend (`app.py`), wrapping t
 This project requires:
 
 - Python 3.10.x (tested on 3.10.11)
-- An OpenAI API key
+- OpenAI API key
 - Git
-- Internet access
 
 ---
 
@@ -202,7 +201,7 @@ This line installs:
 - LangChain ecosystem (`langchain-core`, `langchain-community`, `langchain-openai`, `langchain-chroma`, `langchain-text-splitters`)
 - Document processing tools (`unstructured`, `pypdf`, `openpyxl`, `pandas`)
 - Retrieval utilities (`rank-bm25`, `numpy`)
-- Streamlit UI (Bonus A)
+- Streamlit UI (`streamlit`)
 
 **Note:** ChromaDB itself isn't pinned directly - `langchain-chroma` installs a compatible version automatically (as noted in `requirements.txt` too).
 
@@ -273,7 +272,7 @@ The final accuracy is printed to the console.
 
 ---
 
-### STEP 8 - Run the Streamlit Chat Interface (Bonus A)
+### STEP 8 - Run the Streamlit Chat Interface
 
 ```bash
 streamlit run app.py
