@@ -152,21 +152,10 @@ This project requires:
 
 ### STEP 1 - Clone the Repository
 
-This project uses Git Large File Storage (LFS) to store the data - folder and the persisted chroma_db - vector store.
-Before cloning, ensure Git LFS is installed:
-
-```bash
-git lfs install
-```
-Then clone:
-
 ```bash
 git clone https://github.com/davidtel999/Homework3.git
 cd Homework3
 ```
-
-GitHub will not display large files (e.g., .sqlite3, .bin, .pdf) in the browser.
-They can download correctly after cloning with Git LFS.
 
 ---
 
