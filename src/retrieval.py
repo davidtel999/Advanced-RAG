@@ -5,6 +5,9 @@ from langchain_openai import OpenAIEmbeddings
 from langchain_chroma import Chroma
 from langchain_core.documents import Document
 from langchain_community.retrievers import BM25Retriever
+import os
+os.environ.setdefault("ANONYMIZED_TELEMETRY", "False")  # Silence ChromaDB's telemetry: it fails with a posthog version mismatch and
+# prints harmless errors on every run. Must run before chromadb is imported.
 
 # 1. Connection to your pre-built Chroma database
 embedding_model = OpenAIEmbeddings(model="text-embedding-3-small")
