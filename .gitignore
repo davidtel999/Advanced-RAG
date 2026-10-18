@@ -1,0 +1,24 @@
+# Vector store (large binary index, rebuilt via python -m src.ingestion)
+chroma_db/
+
+# Environment variables / secrets
+.env
+
+# Long-term memory profile (generated at runtime, personal)
+chat_memory_profile.json
+
+# Evaluation output (generated at runtime)
+evaluation_results.json
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environment
+.venv/
+venv/
+
+# OS files
+.DS_Store
+Thumbs.db
