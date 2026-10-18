@@ -185,11 +185,16 @@ def build_or_load_vectorstore(force_rebuild: bool = False) -> Chroma:
     final_chunks = chunk_documents(all_docs)
 
     print("Conversion to embeddings / persisting to Vector DB...")
-    vectorstore = Chroma.from_documents(
-        documents=final_chunks,
-        embedding=embedding_model,
+    vectorstore = Chroma(
         persist_directory=str(persist_db_dir),
+        embedding_function=embedding_model,
     )
+
+    # Embed in small batches: OpenAI rejects requests over 300,000 tokens.
+    batch_size = 50
+    for i in range(0, len(final_chunks), batch_size):
+        vectorstore.add_documents(final_chunks[i:i + batch_size])
+        print(f"  embedded {min(i + batch_size, len(final_chunks))}/{len(final_chunks)}")
     print(f"Vector store created at '{persist_db_dir}'.")
     return vectorstore
 
