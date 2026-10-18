@@ -11,6 +11,9 @@ from langchain_core.documents import Document
 from langchain_community.document_loaders import PyPDFLoader, TextLoader, UnstructuredHTMLLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 
+os.environ.setdefault("ANONYMIZED_TELEMETRY", "False")  # Silence ChromaDB's telemetry: it fails with a posthog version mismatch and
+# prints harmless errors on every run. Must run before chromadb is imported.
+
 # Setup paths based on project structure
 base_dir = Path(__file__).resolve().parent.parent
 data_folder = base_dir / "data"
