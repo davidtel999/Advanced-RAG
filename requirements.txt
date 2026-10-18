@@ -1,5 +1,5 @@
 # Core Utilities:
-numpy==2.0.2
+numpy==1.26.4
 pandas==2.2.3
 pydantic==2.10.6
 
