@@ -145,9 +145,8 @@ This addition introduces a refined **Streamlit** frontend (`app.py`), wrapping t
 This project requires:
 
 - Python 3.10.x (tested on 3.10.11)
-- An OpenAI API key
+- OpenAI API key
 - Git
-- Internet access
 
 ---
 
