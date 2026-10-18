@@ -153,8 +153,8 @@ This project requires:
 ### STEP 1 - Clone the Repository
 
 ```bash
-git clone https://github.com/davidtel999/Homework3.git
-cd Homework3
+git clone https://github.com/davidtel999/Advanced-RAG.git
+cd Advanced-RAG
 ```
 
 ---
